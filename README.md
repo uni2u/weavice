@@ -1,2 +1,2 @@
-# weavice
-weavice (weave a service) is a container chaining service
+# weavice (weave service)
+weavice [wi:vis] is a container chaining service.

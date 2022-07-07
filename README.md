@@ -1,7 +1,10 @@
 # weavice (weave service)
-weavice [wi:vis] is a Cloud Native network service.
+weavice [wi:vis] is a Cloud-Native network service.
 
-## network policy validation
+## Cloud-Native Security Function Chaining (CNSFC)
+
+
+## Cloud-Native Network Policy Validation (CNNPV)
 
 ### docker socket check
 

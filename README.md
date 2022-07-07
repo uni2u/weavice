@@ -6,7 +6,7 @@ weavice [wi:vis] is a Cloud-Native network service.
 
 ## Cloud-Native Network Policy Validation (CNNPV)
 
-### docker socket check
+### docker case
 
 #### What is `nsenter`?
 docker는 namespace 를 기반으로 컨테이너 환경을 격리한다.

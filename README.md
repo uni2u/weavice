@@ -4,7 +4,7 @@ weavice [wi:vis] is a Cloud-Native network service.
 ## Cloud-Native Security Function Chaining (CNSFC by [TSNLab](https://www.tsnlab.com/home))
 
 
-## Cloud-Native Network Policy Validation (CNNPV)
+## Cloud-Native Network Policy Validation (CNNPV by [ZENTO](http://www.zento.co.kr/index.html))
 
 ### docker case
 

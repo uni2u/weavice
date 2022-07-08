@@ -2,6 +2,32 @@
 weavice [wi:vis] is a Cloud-Native network service.
 
 ## Cloud-Native Security Function Chaining (CNSFC by [TSNLab](https://www.tsnlab.com/home))
+CNSFC는 Cloud-Native 환경에서 생성되는 마이크로서비스간 안전한 네트워킹을 위해 보안 서비스를 동적으로 연결한다.
+SF (Security Function) 는 네트워킹 보안 서비스를 제공하는 서비스로서 Firewall, IPS, IDS 등을 의미하며 process, VM, container 등으로 제공된다.
+SF 는 네트워킹중인 microservice 사이에 유연하게 적용될 수 있도록하며 이러한 모양을 Chaining 이라고 정의한다.
+본 프로젝트에서 정의하는 SFC 는 기존 [Service Function Chaining](https://cloudify.co/blog/cloudify-orchestrates-service-function-chaining-at-mef-openstack-summit-nfv-tosca-orchestration-network-automation/) 과 동일하며, 네트워크 보안을 위한 Function 을 Chaining 하는 것을 의미한다.
+```
++------------+   +------------+   []   +------------+   +------------+   +------------+
+|microservice|===|microservice|   []   |microservice|===|microservice|===|microservice|
+|     A      |   |     B      |   []   |     A      |   |  security  |   |     B      |
++------------+   +------------+   []   +------------+   +------------+   +------------+
+
+---
+
++------------+        +------------+
+|microservice|        |microservice|
+|    IPS     |  +----->  Firewall  |
++--^------+--+  |     +--+---------+
+   |      |     |        |
++--+------v--+  |        |     +------------+
+|microservice|  |        |     |microservice|
+|     A      +--+        +----->     B      |
++------------+                 +------------+
+```
+위 예와 같이 _microservice A_ 와 _microservice B_ 사이에 네트워크가 미리 구성된 상태에서 네트워크의 보안을 위해 _microservice security_ 서비스를 동적으로 추가/삭제할 수 있는 것을 의미한다.
+
+마이크로서비스의 특성상 수많은 서비스들의 생성과 삭제가 반복되는 관계로 IP 가 동적으로 교체될 수 있다.
+즉, 이미 구성된 마이크로서비스간 네트워킹이 지속되기 위해서는 _iptables_ 관리가 매우 중요하다.
 
 
 ## Cloud-Native Network Policy Validation (CNNPV by [ZENTO](http://www.zento.co.kr/index.html))
